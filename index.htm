@@ -1,212 +1,221 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Relatório de Ronda de 5S</title>
-  <style>
-  
-  
-body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 1;
-  padding: 0;
-  background-color: #f4f6f9;
-  color: #333;
-}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Ronda de 5S</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0; /* Ajustado de '1' para '0' para melhor controle */
+            padding: 0;
+            background-color: #f4f6f9;
+            color: #333;
+        }
 
-header {
-  background-color: #ffffff;
-  padding: 1px 10px;
-  display: flex;
-  align-items: center;
-  justify-content: lesft;
-  color: #333;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  position: relative;
-}
+        header {
+            background-color: #ffffff;
+            padding: 1px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* Corrigido */
+            color: #333;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
 
-header img {
-  height: 50px;
-  margin: 0 10px;
-}
+        header img {
+            height: 50px;
+            margin: 0 10px;
+        }
 
-header h1 {
-  font-size: 33px;
-  margin: 0;
-  text-align: center;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
+        header h1 {
+            font-size: 33px;
+            margin: 0;
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
 
-.subtitulo {
-  margin-left: auto;
-  margin-right: 1px;
-  font-weight: normal
-  justify-content: lesft;
-  color: #332;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  position: relativ;
-}
+        .subtitulo {
+            margin-left: auto;
+            margin-right: 1px;
+            font-weight: normal;
+            color: #332;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+            position: relative; /* Corrigido */
+        }
 
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.08);
+        }
 
+        h2 {
+            margin-top: 30px;
+            color: #1c2b3a;
+            font-size: 20px;
+        }
 
+        label {
+            font-weight: bold;
+            margin-top: 15px;
+            display: block;
+            font-size: 14px;
+        }
 
+        .editable-box {
+            border: 1px solid #ccc;
+            min-height: 150px;
+            padding: 10px;
+            margin-top: 5px;
+            background: #fff;
+            border-radius: 8px;
+        }
 
-    .container {
-      max-width: 1000px;
-      margin: 40px auto;
-      background: white;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.08);
-    }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            margin-top: 5px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
 
-    h2 {
-      margin-top: 30px;
-      color: #1c2b3a;
-      font-size: 20px;
-    }
+        textarea {
+            height: 150px;
+        }
 
-    label {
-      font-weight: bold;
-      margin-top: 15px;
-      display: block;
-      font-size: 14px;
-    }
+        .uploaded-img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            display: block;
+            border-radius: 8px;
+        }
 
-    .editable-box {
-      border: 1px solid #ccc;
-      min-height: 150px;
-      padding: 10px;
-      margin-top: 5px;
-      background: #fff;
-      border-radius: 8px;
-    }
+        .btn {
+            background-color: #1c2b3a;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
 
-    input, select, textarea {
-      width: 100%;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      margin-top: 5px;
-      font-size: 14px;
-      box-sizing: border-box;
-    }
+        .btn-danger {
+            background-color: #dc3545; /* Vermelho */
+            color: white;
+            padding: 6px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: 0.3s;
+            margin-left: 5px;
+        }
 
-    textarea {
-      height: 150px;
-    }
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
 
-    .uploaded-img {
-      max-width: 100%;
-      height: auto;
-      margin-top: 10px;
-      display: block;
-      border-radius: 8px;
-    }
+        .btn:hover {
+            background-color: #324c63;
+        }
 
-    .btn {
-      background-color: #1c2b3a;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: 0.3s;
-      margin-top: 20px;
-    }
+        .footer {
+            text-align: center;
+            font-size: 13px;
+            color: #777;
+            margin-top: 60px;
+        }
 
-    .btn:hover {
-      background-color: #324c63;
-    }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
 
-    .footer {
-      text-align: center;
-      font-size: 13px;
-      color: #777;
-      margin-top: 60px;
-    }
+        table th, table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
+        table th {
+            background-color: #f4f6f9;
+            font-weight: normal;
+        }
 
-    table th, table td {
-      padding: 12px;
-      border: 1px solid #ddd;
-      text-align: left;
-    }
+        .flex-row {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
 
-    table th {
-      background-color: #f4f6f9;
-      font-weight: normal;
-    }
+        .flex-row > div {
+            flex: 1;
+        }
 
-    .flex-row {
-      display: flex;
-      gap: 20px;
-      margin-top: 20px;
-    }
-
-    .flex-row > div {
-      flex: 1;
-    }
-
-    #statusMensagem {
-      text-align: center;
-      margin-top: 20px;
-      font-weight: bold;
-      color: #1c2b3a;
-    }
-  </style>
+        #statusMensagem {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #1c2b3a;
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
-  <img src="http://i.imgur.com/Fln53Oi.png" alt="Logo do SIG">
-  <img src="https://i.imgur.com/g0XvPeH.png" alt="Logo do SOL">
-  <h1>Relatório de Ronda 5S</h1>
-  <h5 class="subtitulo">SIG-FOR-002</h5>
+    <img src="http://i.imgur.com/Fln53Oi.png" alt="Logo do SIG">
+    <img src="https://i.imgur.com/g0XvPeH.png" alt="Logo do SOL">
+    <h1>Relatório de Ronda 5S</h1>
+    <h5 class="subtitulo">SIG-FOR-002</h5>
 </header>
 
-  <div class="container">
+<div class="container">
     <div class="flex-row">
-      <div>
-        <label for="unidade">Unidade</label>
-        <select id="unidade">
-          <option value="">Selecione</option>
-          <option>TCA</option>
-          <option>TCV/ABC</option>
-          <option>MCD/TCG</option>
-          <option>TBL</option>
-          <option>TBA/TPA</option>
-          <option>TSJ</option>
-          <option>API</option>
-          <option>TPH</option>
-        </select>
-      </div>
+        <div>
+            <label for="unidade">Unidade</label>
+            <select id="unidade">
+                <option value="">Selecione</option>
+                <option>TCA</option>
+                <option>TCV/ABC</option>
+                <option>MCD/TCG</option>
+                <option>TBL</option>
+                <option>TBA/TPA</option>
+                <option>TSJ</option>
+                <option>API</option>
+                <option>TPH</option>
+            </select>
+        </div>
 
-      <div>
-        <label for="departamento">Departamento</label>
-        <select id="departamento" onchange="atualizarArea()">
-          <option value="">Selecione</option>
-          <option value="logistica">Logística</option>
-          <option value="administrativo">Administrativo</option>
-        </select>
-      </div>
+        <div>
+            <label for="departamento">Departamento</label>
+            <select id="departamento" onchange="atualizarArea()">
+                <option value="">Selecione</option>
+                <option value="logistica">Logística</option>
+                <option value="administrativo">Administrativo</option>
+            </select>
+        </div>
 
-      <div>
-        <label for="area">Área</label>
-        <select id="area">
-          <option value="">Selecione</option>
-        </select>
-      </div>
+        <div>
+            <label for="area">Área</label>
+            <select id="area">
+                <option value="">Selecione</option>
+            </select>
+        </div>
     </div>
 
     <label for="responsavel">Responsável da Ronda</label>
@@ -222,164 +231,217 @@ header h1 {
     <h2>Plano de Ação</h2>
     <p>Liste as ações necessárias para resolver o problema:</p>
     <table>
-      <thead>
-        <tr>
-          <th>Nº</th>
-          <th>Ação</th>
-          <th>Responsável</th>
-          <th>Prazo</th>
-        </tr>
-      </thead>
-      <tbody id="action-table-body">
-        <tr>
-          <td>1</td>
-          <td><input type="text" placeholder="Descreva a ação"></td>
-          <td><input type="text" placeholder="Responsável"></td>
-          <td><input type="date"></td>
-        </tr>
-      </tbody>
+        <thead>
+            <tr>
+                <th>Nº</th>
+                <th>Ação</th>
+                <th>Responsável</th>
+                <th>Prazo</th>
+                <th></th> </tr>
+        </thead>
+        <tbody id="action-table-body">
+            <tr>
+                <td>1</td>
+                <td><input type="text" placeholder="Descreva a ação"></td>
+                <td><input type="text" placeholder="Responsável"></td>
+                <td><input type="date"></td>
+                <td><button class="btn-danger" onclick="deleteRow(this)">🗑️</button></td>
+            </tr>
+        </tbody>
     </table>
     <button class="btn" onclick="addRow()">➕ Adicionar Ação</button>
 
     <div class="buttons">
-      <button class="btn" onclick="enviarFormulario()">📤 Enviar</button>
-
+        <button class="btn" onclick="enviarFormulario()">📤 Enviar</button>
     </div>
 
     <div id="statusMensagem"></div>
 
     <div class="footer">
-      SIG - Sistema Integrado de Gestão • Relatório de Ronda 5S
-
+        SIG - Sistema Integrado de Gestão • Relatório de Ronda 5S
     </div>
-  </div>
+</div>
 
 <script>
-  let contadorAcoes = 1;
+    let contadorAcoes = 1; // Para manter os números das linhas (não necessariamente o ID da linha)
 
-  function addRow() {
-    contadorAcoes++;
-    const table = document.getElementById('action-table-body');
-    const row = document.createElement('tr');
-    row.innerHTML = `
-      <td>${contadorAcoes}</td>
-      <td><input type="text" placeholder="Descreva a ação"></td>
-      <td><input type="text" placeholder="Responsável"></td>
-      <td><input type="date"></td>
-    `;
-    table.appendChild(row);
-  }
-
-  function inserirImagem(divId, input) {
-    const imagemContainer = document.getElementById(divId);
-    const file = input.files[0];
-    if (file && file.type.startsWith("image/")) {
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        const img = document.createElement("img");
-        img.src = e.target.result;
-        img.className = "uploaded-img";
-        imagemContainer.innerHTML = '';
-        imagemContainer.appendChild(img);
-        console.log("Imagem carregada como Base64:", img.src);
-      };
-      reader.readAsDataURL(file);
-    }
-    input.value = "";
-  }
-
-  async function enviarFormulario() {
-    const statusMensagem = document.getElementById('statusMensagem');
-    statusMensagem.textContent = "Enviando formulário... aguarde.";
-
-    const responsavelRonda = document.getElementById("responsavel").value.trim();
-    const unidade = document.getElementById("unidade").value;
-    const departamento = document.getElementById("departamento").value;
-    const area = document.getElementById("area").value;
-    const detalhe = document.getElementById("detalhe").value.trim();
-
-    const imagemElement = document.querySelector("#imagemDescricao img");
-    let imagemBase64 = null;
-    if (imagemElement) {
-      imagemBase64 = imagemElement.src.split(',')[1];
+    function addRow() {
+        contadorAcoes++;
+        const table = document.getElementById('action-table-body');
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${contadorAcoes}</td>
+            <td><input type="text" placeholder="Descreva a ação"></td>
+            <td><input type="text" placeholder="Responsável"></td>
+            <td><input type="date"></td>
+            <td><button class="btn-danger" onclick="deleteRow(this)">🗑️</button></td>
+        `;
+        table.appendChild(row);
+        updateRowNumbers(); // Re-indexa os números após adicionar
     }
 
-    // Coleta as ações da tabela
-    const tabela = document.querySelectorAll("#action-table-body tr");
-    const acoes = [];
+    function deleteRow(button) {
+        const row = button.closest('tr'); // Encontra a linha mais próxima do botão
+        if (row) {
+            row.remove(); // Remove a linha
+            updateRowNumbers(); // Re-indexa os números após remover
+        }
+    }
 
-    tabela.forEach((linha, index) => {
-      const acao = linha.cells[1].querySelector('input').value.trim();
-      const responsavel = linha.cells[2].querySelector('input').value.trim();
-      const prazo = linha.cells[3].querySelector('input').value;
+    function updateRowNumbers() {
+        const tableBody = document.getElementById('action-table-body');
+        const rows = tableBody.getElementsByTagName('tr');
+        for (let i = 0; i < rows.length; i++) {
+            rows[i].cells[0].textContent = i + 1; // Atualiza o texto da primeira célula (Nº)
+        }
+        contadorAcoes = rows.length; // Atualiza o contador para a próxima adição
+    }
 
-      if (acao && responsavel && prazo) {
-        acoes.push({
-          Numero: index + 1,
-          Acao: acao,
-          Responsavel: responsavel,
-          Prazo: prazo
+
+    function inserirImagem(divId, input) {
+        const imagemContainer = document.getElementById(divId);
+        const file = input.files[0];
+        if (file && file.type.startsWith("image/")) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const img = document.createElement("img");
+                img.src = e.target.result;
+                img.className = "uploaded-img";
+                imagemContainer.innerHTML = '';
+                imagemContainer.appendChild(img);
+                console.log("Imagem carregada como Base64:", img.src);
+            };
+            reader.readAsDataURL(file);
+        }
+        input.value = ""; // Limpa o input de arquivo
+    }
+
+    async function enviarFormulario() {
+        const statusMensagem = document.getElementById('statusMensagem');
+        statusMensagem.textContent = "Enviando formulário... aguarde.";
+
+        const responsavelRonda = document.getElementById("responsavel").value.trim();
+        const unidade = document.getElementById("unidade").value;
+        const departamento = document.getElementById("departamento").value;
+        const area = document.getElementById("area").value;
+        const detalhe = document.getElementById("detalhe").value.trim();
+
+        const imagemElement = document.querySelector("#imagemDescricao img");
+        let imagemBase64 = null;
+        if (imagemElement) {
+            imagemBase64 = imagemElement.src.split(',')[1];
+        }
+
+        // Coleta as ações da tabela
+        const tabela = document.querySelectorAll("#action-table-body tr");
+        const acoes = [];
+
+        tabela.forEach((linha, index) => {
+            // Verifica se a linha foi deletada para não coletar dados de inputs que não existem mais
+            if (linha.cells.length > 3) { // Garante que a linha ainda possui as células esperadas
+                const acao = linha.cells[1].querySelector('input').value.trim();
+                const responsavel = linha.cells[2].querySelector('input').value.trim();
+                const prazo = linha.cells[3].querySelector('input').value;
+
+                if (acao || responsavel || prazo) { // Adicionado verificação para coletar se ao menos um campo da ação estiver preenchido
+                    acoes.push({
+                        Numero: index + 1, // O número aqui se refere à ordem atual na tabela, não ao contadorAcoes original
+                        Acao: acao,
+                        Responsavel: responsavel,
+                        Prazo: prazo
+                    });
+                }
+            }
         });
-      }
-    });
-    
-    const formularioId = "SOL-" + Date.now();  // Ex: FORM-1714401234567
 
-    const dadosFormulario = {
-      FormularioID: formularioId,  // 👈 Aqui
-      Unidade: unidade,
-      Departamento: departamento,
-      Area: area,
-      ResponsavelRonda: responsavelRonda,
-      DetalheAnomalia: detalhe,
-      Evidencia: imagemBase64,
-      Acoes: acoes
-    };
+        const formularioId = "SOL-" + Date.now();
 
-    try {
-      const response = await fetch('https://prod-15.brazilsouth.logic.azure.com:443/workflows/a62a81e1190d45aea44993e5863ae9e1/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=yu5ubkDAP-zY9ncoi3jNMbR5nJRSpuF_9AV4PoAAMg4', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(dadosFormulario)
-      });
+        const dadosFormulario = {
+            FormularioID: formularioId,
+            Unidade: unidade,
+            Departamento: departamento,
+            Area: area,
+            ResponsavelRonda: responsavelRonda,
+            DetalheAnomalia: detalhe,
+            Evidencia: imagemBase64,
+            Acoes: acoes
+        };
 
-      if (response.ok) {
-        statusMensagem.textContent = "Formulário enviado com sucesso! ✅";
-      } else {
-        statusMensagem.textContent = "Erro ao enviar o formulário. ❌";
-      }
-    } catch (error) {
-      console.error('Erro ao enviar formulário:', error);
-      statusMensagem.textContent = "Erro de conexão ao enviar. ❌";
+        // --- AVISO CRÍTICO: A requisição 'fetch' abaixo SÓ FUNCIONARÁ se este arquivo estiver
+        // --- sendo executado em um ambiente com acesso à internet e sem restrições de CORS
+        // --- para o seu Logic App. Se você hospedar este arquivo localmente (abrindo direto
+        // --- no navegador via file:///) ou em um servidor sem a configuração CORS adequada,
+        // --- esta parte da funcionalidade de envio pode falhar.
+
+        try {
+            const response = await fetch('https://prod-15.brazilsouth.logic.azure.com:443/workflows/a62a81e1190d45aea44993e5863ae9e1/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=yu5ubkDAP-zY9ncoi3jNMbR5nJRSpuF_9AV4PoAAMg4', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(dadosFormulario)
+            });
+
+            if (response.ok) {
+                statusMensagem.textContent = "Formulário enviado com sucesso! ✅";
+                limparCamposFormulario(); // Limpar campos após sucesso
+            } else {
+                statusMensagem.textContent = `Erro ao enviar o formulário: ${response.status} ${response.statusText} ❌`;
+            }
+        } catch (error) {
+            console.error('Erro ao enviar formulário:', error);
+            statusMensagem.textContent = "Erro de conexão ao enviar. Verifique a URL ou sua conexão. ❌";
+        }
     }
-  }
 
-  function atualizarArea() {
-    const departamento = document.getElementById("departamento").value;
-    const areaSelect = document.getElementById("area");
+    function limparCamposFormulario() {
+        document.getElementById("unidade").value = "";
+        document.getElementById("departamento").value = "";
+        document.getElementById("area").innerHTML = '<option value="">Selecione</option>'; // Reseta as opções de área
+        document.getElementById("responsavel").value = "";
+        document.getElementById("detalhe").value = "";
+        document.getElementById("imagemDescricaoInput").value = ""; // Limpa o input de arquivo
+        document.getElementById("imagemDescricao").innerHTML = ""; // Limpa a imagem exibida
 
-    areaSelect.innerHTML = '<option value="">Selecione</option>';
-
-    if (departamento === "logistica") {
-      const areasLogistica = ["CPD", "Recebimento", "Packing", "Corredores", "Expedição", "Vestiário", "Câmera Fria"];
-      areasLogistica.forEach(area => {
-        const option = document.createElement("option");
-        option.value = area;
-        option.textContent = area;
-        areaSelect.appendChild(option);
-      });
-    } else if (departamento === "administrativo") {
-      const areasAdministrativo = ["RH", "Comercial", "Banheiros", "Financeiro", "Área Comum"];
-      areasAdministrativo.forEach(area => {
-        const option = document.createElement("option");
-        option.value = area;
-        option.textContent = area;
-        areaSelect.appendChild(option);
-      });
+        // Limpa a tabela de ações e adiciona a primeira linha de volta
+        const tableBody = document.getElementById('action-table-body');
+        tableBody.innerHTML = `
+            <tr>
+                <td>1</td>
+                <td><input type="text" placeholder="Descreva a ação"></td>
+                <td><input type="text" placeholder="Responsável"></td>
+                <td><input type="date"></td>
+                <td><button class="btn-danger" onclick="deleteRow(this)">🗑️</button></td>
+            </tr>
+        `;
+        contadorAcoes = 1; // Reseta o contador
+        document.getElementById('statusMensagem').textContent = ''; // Limpa a mensagem de status
     }
-  }
+
+
+    function atualizarArea() {
+        const departamento = document.getElementById("departamento").value;
+        const areaSelect = document.getElementById("area");
+
+        areaSelect.innerHTML = '<option value="">Selecione</option>';
+
+        if (departamento === "logistica") {
+            const areasLogistica = ["CPD", "Recebimento", "Packing", "Corredores", "Expedição", "Vestiário", "Câmera Fria"];
+            areasLogistica.forEach(area => {
+                const option = document.createElement("option");
+                option.value = area;
+                option.textContent = area;
+                areaSelect.appendChild(option);
+            });
+        } else if (departamento === "administrativo") {
+            const areasAdministrativo = ["RH", "Comercial", "Banheiros", "Comercial", "Financeiro", "Área Comum"];
+            areasAdministrativo.forEach(area => {
+                const option = document.createElement("option");
+                option.value = area;
+                option.textContent = area;
+                areaSelect.appendChild(option);
+            });
+        }
+    }
 </script>
-
 
 </body>
 </html>
